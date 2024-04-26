@@ -1,5 +1,3 @@
-Por supuesto. Aquí tienes un ejemplo de cómo podría ser tu archivo `README.md` para el repositorio `geometric-calculator-java`:
-
 # Calculadora Geométrica en Java
 
 Este es un proyecto de una calculadora geométrica implementada en Java. Permite calcular el área y el perímetro de diferentes figuras geométricas como círculos, cuadrados, triángulos, rectángulos y pentágonos.
@@ -11,7 +9,7 @@ Este es un proyecto de una calculadora geométrica implementada en Java. Permite
 3. Navega hasta el directorio del proyecto.
 4. Compila el programa con el siguiente comando:
    ```shell
-    javac src/Main.java src/Circle.java src/Square.java src/Triangle.java src/Rectangle.java src/Pentagon.java
+    javac ./Main.java ./src/Circle.java ./src/Square.java ./src/Triangle.java ./src/Rectangle.java ./src/Pentagon.java
    ```
 5. Ejecuta el programa con el siguiente comando:
    ```shell
@@ -22,8 +20,8 @@ Sigue las instrucciones en pantalla para seleccionar la figura geométrica y la 
 
 ## Estructura del Proyecto
 
+- `Main.java`: Clase principal que maneja la interacción con el usuario.
 - `src/`: Contiene los archivos fuente del proyecto.
-  - `Main.java`: Clase principal que maneja la interacción con el usuario.
   - `Circle.java`: Clase para calcular el área y el perímetro de un círculo.
   - `Square.java`: Clase para calcular el área y el perímetro de un cuadrado.
   - `Triangle.java`: Clase para calcular el área y el perímetro de un triángulo.
