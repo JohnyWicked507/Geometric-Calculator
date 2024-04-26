@@ -7,7 +7,7 @@ public class Circle implements Figure {
 
     public Circle() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingresa el radio del círculo: ");
+        System.out.print("Ingresa el radio del circulo: ");
         this.radius = scanner.nextDouble();
     }
 

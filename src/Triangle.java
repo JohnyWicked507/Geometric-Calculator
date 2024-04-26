@@ -11,15 +11,15 @@ public class Triangle implements Figure {
 
     public Triangle() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingresa la base del triángulo: ");
+        System.out.print("Ingresa la base del triangulo: ");
         this.base = scanner.nextDouble();
-        System.out.print("Ingresa la altura del triángulo: ");
+        System.out.print("Ingresa la altura del triangulo: ");
         this.height = scanner.nextDouble();
-        System.out.print("Ingresa la longitud del lado 1 del triángulo: ");
+        System.out.print("Ingresa la longitud del lado 1 del triangulo: ");
         this.side1 = scanner.nextDouble();
-        System.out.print("Ingresa la longitud del lado 2 del triángulo: ");
+        System.out.print("Ingresa la longitud del lado 2 del triangulo: ");
         this.side2 = scanner.nextDouble();
-        System.out.print("Ingresa la longitud del lado 3 del triángulo: ");
+        System.out.print("Ingresa la longitud del lado 3 del triangulo: ");
         this.side3 = scanner.nextDouble();
     }
 

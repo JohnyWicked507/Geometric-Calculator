@@ -8,9 +8,9 @@ public class Rectangle implements Figure {
 
     public Rectangle() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingresa la longitud del rectángulo: ");
+        System.out.print("Ingresa la longitud del rectangulo: ");
         this.length = scanner.nextDouble();
-        System.out.print("Ingresa la anchura del rectángulo: ");
+        System.out.print("Ingresa la anchura del rectangulo: ");
         this.width = scanner.nextDouble();
     }
 

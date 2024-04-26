@@ -7,7 +7,7 @@ public class Pentagon implements Figure {
 
     public Pentagon() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingresa la longitud del lado del pentágono: ");
+        System.out.print("Ingresa la longitud del lado del pentagono: ");
         this.side = scanner.nextDouble();
     }
 
