@@ -2,10 +2,10 @@ package src;
 
 import java.util.Scanner;
 
-public class Circle implements Figure {
+public class circleClass implements figureInterface {
     private double radius;
 
-    public Circle() {
+    public circleClass() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingresa el radio del circulo: ");
         this.radius = scanner.nextDouble();

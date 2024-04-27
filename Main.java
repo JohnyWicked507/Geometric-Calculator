@@ -11,7 +11,7 @@ public class Main {
         // Array para almacenar resultados [0] área, [1] perímetro, [2] potencia
         double[] resultados = new double[3];
 
-        while (continuar) {
+        do {
             println("""
                     Por favor, elige una figura geometrica:
                     1. Circulo
@@ -30,23 +30,23 @@ public class Main {
                     continuar = false;
                     break;
                 case 1:
-                    Circle circle = new Circle();
-                    handleOperation(circle, resultados);
+                    circleClass circleClass = new circleClass();
+                    handleOperation(circleClass, resultados);
                     break;
                 case 2:
-                    Square square = new Square();
-                    handleOperation(square, resultados);
+                    squareClass squareClass = new squareClass();
+                    handleOperation(squareClass, resultados);
                     break;
                 case 3:
-                    Triangle triangle = new Triangle();
-                    handleOperation(triangle, resultados);
+                    triangleClass triangleClass = new triangleClass();
+                    handleOperation(triangleClass, resultados);
                     break;
                 case 4:
-                    Rectangle rectangle = new Rectangle();
-                    handleOperation(rectangle, resultados);
+                    rectangleClass rectangleClass = new rectangleClass();
+                    handleOperation(rectangleClass, resultados);
                     break;
                 case 5:
-                    Pentagon pentagon = new Pentagon();
+                    pentagonClass pentagon = new pentagonClass();
                     handleOperation(pentagon, resultados);
                     break;
                 case 6:
@@ -56,12 +56,12 @@ public class Main {
                     println("Opcion no valida. Por favor, selecciona una opcion valida.");
                     break;
             }
-        }
+        } while (continuar);
 
         println("¡Gracias por usar la calculadora!");
     }
 
-    public static void handleOperation(Figure figure, double[] resultados) {
+    public static void handleOperation(figureInterface figure, double[] resultados) {
         Scanner scanner = new Scanner(System.in);
 
         println("""

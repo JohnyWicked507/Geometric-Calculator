@@ -2,14 +2,14 @@ package src;
 
 import java.util.Scanner;
 
-public class Triangle implements Figure {
+public class triangleClass implements figureInterface {
     private double base;
     private double height;
     private double side1;
     private double side2;
     private double side3;
 
-    public Triangle() {
+    public triangleClass() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingresa la base del triangulo: ");
         this.base = scanner.nextDouble();

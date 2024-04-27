@@ -1,6 +1,6 @@
 package src;
 
-public interface Figure {
+public interface figureInterface {
     double calculateArea();
 
     double calculatePerimeter();

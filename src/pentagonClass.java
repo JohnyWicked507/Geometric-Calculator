@@ -2,22 +2,22 @@ package src;
 
 import java.util.Scanner;
 
-public class Square implements Figure {
+public class pentagonClass implements figureInterface {
     private double side;
 
-    public Square() {
+    public pentagonClass() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingresa la longitud del lado del cuadrado: ");
+        System.out.print("Ingresa la longitud del lado del pentagono: ");
         this.side = scanner.nextDouble();
     }
 
     @Override
     public double calculateArea() {
-        return side * side;
+        return 0.25 * Math.sqrt(5 * (5 + 2 * Math.sqrt(5))) * Math.pow(side, 2);
     }
 
     @Override
     public double calculatePerimeter() {
-        return 4 * side;
+        return 5 * side;
     }
 }

@@ -2,11 +2,11 @@ package src;
 
 import java.util.Scanner;
 
-public class Rectangle implements Figure {
+public class rectangleClass implements figureInterface {
     private double length;
     private double width;
 
-    public Rectangle() {
+    public rectangleClass() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ingresa la longitud del rectangulo: ");
         this.length = scanner.nextDouble();
