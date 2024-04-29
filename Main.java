@@ -1,133 +1,69 @@
-import src.*;
+import src.calculators.*;
+import src.config.PairType;
+import src.functions.fn;
+
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+	private static boolean runMain = true;
 
-        println("Bienvenido a la calculadora de areas y perimetros.");
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 
-        boolean continuar = true;
-        // Array para almacenar resultados [0] área, [1] perímetro, [2] potencia
-        double[] resultados = new double[3];
+		/* [0] area, [1] perimeter, [2] power */
+		double[] resultsArray = new double[3];
 
-        do {
-            println("""
-                    Por favor, elige una figura geometrica:
-                    1. Circulo
-                    2. Cuadrado
-                    3. Triangulo
-                    4. Rectangulo
-                    5. Pentagono
-                    6. Potencia
-                    0. Salir
-                    """);
-            print("Tu seleccion: ");
-            int opcion = getIntInput(scanner);
+		do {
+			fn.clearScr();
+			fn.selectionMenuFormatter("""
+					Please choose a geometric figure:
+					1. Circle
+					2. Square
+					3. Triangle
+					4. Rectangle
+					5. Pentagon
+					6. Power
+					""");
+			PairType<Integer, Boolean> option = fn.getIntegerInput(scanner);
 
-            switch (opcion) {
-                case 0:
-                    continuar = false;
-                    break;
-                case 1:
-                    circleClass circleClass = new circleClass();
-                    handleOperation(circleClass, resultados);
-                    break;
-                case 2:
-                    squareClass squareClass = new squareClass();
-                    handleOperation(squareClass, resultados);
-                    break;
-                case 3:
-                    triangleClass triangleClass = new triangleClass();
-                    handleOperation(triangleClass, resultados);
-                    break;
-                case 4:
-                    rectangleClass rectangleClass = new rectangleClass();
-                    handleOperation(rectangleClass, resultados);
-                    break;
-                case 5:
-                    pentagonClass pentagon = new pentagonClass();
-                    handleOperation(pentagon, resultados);
-                    break;
-                case 6:
-                    handlePowerOperation(resultados);
-                    break;
-                default:
-                    println("Opcion no valida. Por favor, selecciona una opcion valida.");
-                    break;
-            }
-        } while (continuar);
+			if (option.getValue2())
+				continue;
 
-        println("¡Gracias por usar la calculadora!");
-    }
+			switch (option.getValue1()) {
+				case 0 :
+					runMain = false;
+					break;
+				case 1 :
+					CircleCalculator circleCalculator = new CircleCalculator();
+					fn.handleOperation(circleCalculator, resultsArray, "circle");
+					break;
+				case 2 :
+					SquareCalculator squareCalculator = new SquareCalculator();
+					fn.handleOperation(squareCalculator, resultsArray, "square");
+					break;
+				case 3 :
+					TriangleCalculator triangleCalculator = new TriangleCalculator();
+					fn.handleOperation(triangleCalculator, resultsArray, "triangle");
+					break;
+				case 4 :
+					RectangleCalculator rectangleCalculator = new RectangleCalculator();
+					fn.handleOperation(rectangleCalculator, resultsArray, "rectangle");
+					break;
+				case 5 :
+					PentagonCalculator pentagonCalculator = new PentagonCalculator();
+					fn.handleOperation(pentagonCalculator, resultsArray, "pentagon");
+					break;
+				case 6 :
+					fn.handlePowerOperation(resultsArray);
+					break;
+				default :
+					fn.extraMessage = "Invalid option. Please select a valid option.\n"
+							+ "If you want to exit, simply type '0'.";
+					break;
+			}
+		} while (runMain);
 
-    public static void handleOperation(figureInterface figure, double[] resultados) {
-        Scanner scanner = new Scanner(System.in);
-
-        println("""
-                ¿Que operacion deseas realizar?
-                1. Calcular area
-                2. Calcular perimetro
-                0. Volver al menu principal
-                """);
-        print("Tu seleccion: ");
-        int opcion = getIntInput(scanner);
-
-        switch (opcion) {
-            case 0:
-                break;
-            case 1:
-                double area = figure.calculateArea();
-                resultados[0] = area;
-                println("El area es: " + area);
-                break;
-            case 2:
-                double perimetro = figure.calculatePerimeter();
-                resultados[1] = perimetro;
-                println("El perimetro es: " + perimetro);
-                break;
-            default:
-                println("Opcion no valida. Por favor, selecciona una opcion valida.");
-                break;
-        }
-    }
-
-    public static void handlePowerOperation(double[] resultados) {
-        Scanner scanner = new Scanner(System.in);
-
-        print("Ingresa la base: ");
-        double base = scanner.nextDouble();
-        print("Ingresa el exponente: ");
-        int exponente = getIntInput(scanner);
-
-        double resultadoPotencia = calcularPotencia(base, exponente);
-        resultados[2] = resultadoPotencia;
-        println("El resultado de la potencia es: " + resultadoPotencia);
-    }
-
-    public static double calcularPotencia(double base, int exponente) {
-        if (exponente == 0) {
-            return 1;
-        } else if (exponente > 0) {
-            return base * calcularPotencia(base, exponente - 1);
-        } else {
-            return 1 / (base * calcularPotencia(base, -exponente - 1));
-        }
-    }
-
-    public static int getIntInput(Scanner scanner) {
-        while (!scanner.hasNextInt()) {
-            println("Entrada invalida. Por favor, ingresa un numero entero.");
-            scanner.next(); // Limpiar el buffer del scanner
-        }
-        return scanner.nextInt();
-    }
-
-    private static void println(String s) {
-        System.out.println(s);
-    }
-
-    private static void print(String s) {
-        System.out.print(s);
-    }
+		fn.println("Bye bye!");
+		scanner.close();
+	}
 }
