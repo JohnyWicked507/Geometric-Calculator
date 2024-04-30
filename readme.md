@@ -11,7 +11,7 @@ different geometric figures such as circles, squares, triangles, rectangles, and
 4. Compile the program with the following command:
 
 ```shell
-javac ./Main.java ./src/Circle.java ./src/Square.java ./src/Triangle.java ./src/Rectangle.java ./src/Pentagon.java
+javac Main.java src/calculators/*.java src/config/*.java src/functions/*.java src/types/*.java
 ```
 
 5. Run the program with the following command:
@@ -23,24 +23,9 @@ java -cp src Main
 Follow the on-screen instructions to select the geometric figure and the operation you want to perform (area or
 perimeter), and then enter the necessary data when prompted.
 
-## Project Structure
-
-- `Main.java`: Main class that handles user interaction.
-- `src/`: Contains the project's source files.
-    - `Circle.java`: Class to calculate the area and perimeter of a circle.
-    - `Square.java`: Class to calculate the area and perimeter of a square.
-    - `Triangle.java`: Class to calculate the area and perimeter of a triangle.
-    - `Rectangle.java`: Class to calculate the area and perimeter of a rectangle.
-    - `Pentagon.java`: Class to calculate the area and perimeter of a pentagon.
-
-## Contributing
-
-If you want to contribute to this project, you are welcome! You can open an issue to discuss new features or problems
-found, or submit a pull request with your proposed changes.
-
 ## License
 
-This project is under the MIT License: LICENSE.
+This project is under the GPL-3.0 License: [LICENSE](license).
 
 **Additional Information**
 
