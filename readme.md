@@ -17,7 +17,7 @@ javac Main.java src/calculators/*.java src/config/*.java src/functions/*.java sr
 5. Run the program with the following command:
 
 ```shell
-java -cp src Main
+java -cp src Main.java
 ```
 
 Follow the on-screen instructions to select the geometric figure and the operation you want to perform (area or
