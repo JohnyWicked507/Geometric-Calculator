@@ -18,6 +18,7 @@
 .idea
 *.iml
 *.log
+*.class
 **/todo/**
 **/test/**
 __pycache__
